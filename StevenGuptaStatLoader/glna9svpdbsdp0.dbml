@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="mlbdata2" Class="glna9svpdbsdp0DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=stevengserver.database.windows.net;Initial Catalog=mlbdata2;User ID=steveng" SettingsObjectName="StevenGuptaStatLoader.Properties.Settings" SettingsPropertyName="mlbdata2ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.statSP_PlayerInsert" Method="statSP_PlayerInsert">
+    <Parameter Name="PlayerID" Parameter="playerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.statSP_SelectLoadResult" Method="statSP_SelectLoadResult">
+    <Parameter Name="GameID" Parameter="gameID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PitchRecords" Parameter="pitchRecords" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="HitRecords" Parameter="hitRecords" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="PlayRecords" Parameter="playRecords" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.statSP_HitInsert" Method="statSP_HitInsert">
+    <Parameter Name="PlayID" Parameter="playID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HitDataPitchDataID" Parameter="hitDataPitchDataID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HitDataLaunchSpeed" Parameter="hitDataLaunchSpeed" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="HitDataLaunchAngle" Parameter="hitDataLaunchAngle" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="HitDataTotalDistance" Parameter="hitDataTotalDistance" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="HitDataLocation" Parameter="hitDataLocation" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HitDataCoordX" Parameter="hitDataCoordX" Type="System.Decimal" DbType="Decimal(7,3)" />
+    <Parameter Name="HitDataCoordY" Parameter="hitDataCoordY" Type="System.Decimal" DbType="Decimal(7,3)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.statSP_PlayInsert" Method="statSP_PlayInsert">
+    <Parameter Name="GameID" Parameter="gameID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PlayAtBatIndex" Parameter="playAtBatIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BatterID" Parameter="batterID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PitcherID" Parameter="pitcherID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PlayEvent" Parameter="playEvent" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PlayDescription" Parameter="playDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="PlayPitchHand" Parameter="playPitchHand" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="PlayBatHand" Parameter="playBatHand" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="PlayID" Parameter="playID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.statSP_PitchInsert" Method="statSP_PitchInsert">
+    <Parameter Name="PlayID" Parameter="playID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PitchDataPitchNumber" Parameter="pitchDataPitchNumber" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PitchDataStartSpeed" Parameter="pitchDataStartSpeed" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="PitchDataPX" Parameter="pitchDataPX" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="PitchDataPZ" Parameter="pitchDataPZ" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="PitchDataX" Parameter="pitchDataX" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="PitchDataY" Parameter="pitchDataY" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="PitchDataBreakAngle" Parameter="pitchDataBreakAngle" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="PitchDataBreakLength" Parameter="pitchDataBreakLength" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="PitchDataBreakY" Parameter="pitchDataBreakY" Type="System.Decimal" DbType="Decimal(6,3)" />
+    <Parameter Name="PitchDataSpinRate" Parameter="pitchDataSpinRate" Type="System.Decimal" DbType="Decimal(9,3)" />
+    <Parameter Name="PitchDataSpinDirection" Parameter="pitchDataSpinDirection" Type="System.Decimal" DbType="Decimal(9,3)" />
+    <Parameter Name="PitchDataCallDescription" Parameter="pitchDataCallDescription" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="PitchTypeCode" Parameter="pitchTypeCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PitchTypeDescription" Parameter="pitchTypeDescription" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PitchDataPitchID" Parameter="pitchDataPitchID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.statSP_GameInsert" Method="statSP_GameInsert">
+    <Parameter Name="GameID" Parameter="gameID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GameDate" Parameter="gameDate" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="AwayTeam" Parameter="awayTeam" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AwayTeamRuns" Parameter="awayTeamRuns" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AwayTeamHits" Parameter="awayTeamHits" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AwayTeamErrors" Parameter="awayTeamErrors" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HomeTeam" Parameter="homeTeam" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HomeTeamRuns" Parameter="homeTeamRuns" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HomeTeamHits" Parameter="homeTeamHits" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HomeTeamErrors" Parameter="homeTeamErrors" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Venue" Parameter="venue" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="WeatherTemp" Parameter="weatherTemp" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="WeatherDesc" Parameter="weatherDesc" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Wind" Parameter="wind" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
